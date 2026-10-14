@@ -19,7 +19,8 @@ always shows what is being done, by whom, and the code that did it.
 
 ## Rules that keep this working
 
-- `main` is what is live. Nothing goes onto it except through a reviewed PR.
+- Nothing goes onto `main` except through a reviewed PR.
+- Where a repo has a test site, `main` deploys there first and a separate `production` branch deploys to the live site. Changes reach `production` only through a "Release" PR from `main`, after checking on test. The repo's own README says if this applies.
 - One ticket per piece of work. If a ticket turns out to be two jobs, split it.
 - Questions and decisions go as comments on the ticket, not in chat, so they stay with the work.
 - Never commit passwords, API keys, logs, database dumps or anyone's personal data.
